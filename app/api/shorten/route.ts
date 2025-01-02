@@ -12,8 +12,8 @@ export async function POST(request: Request) {
 
     const shortUrl = await response.text()
     return NextResponse.json({ shortUrl })
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to shorten URL' }, { status: 500 })
-  }
+  } catch (err) {
+    return NextResponse.json({ err: 'Failed to shorten URL' }, { status: 500 })
+   }
 }
 
